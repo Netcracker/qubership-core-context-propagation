@@ -10,7 +10,7 @@ import static jakarta.ws.rs.core.HttpHeaders.ACCEPT_LANGUAGE;
 
 public class ContextDataRequest implements IncomingContextData {
 
-    Map<String, Object> contextDataMap = new HashMap<>();
+    private final Map<String, Object> contextDataMap = new HashMap<>();
 
     public static final String CUSTOM_HEADER = "Custom-header-1";
     private static final String WRONG_CUSTOM_HEADER = "Custom-header-2";
