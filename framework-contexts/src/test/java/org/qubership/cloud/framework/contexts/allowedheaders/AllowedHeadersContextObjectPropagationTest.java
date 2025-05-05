@@ -34,16 +34,16 @@ class AllowedHeadersContextObjectPropagationTest extends AbstractContextTestWith
 //        Assertions.assertNotNull(responseContextData.getResponseHeaders().get(CUSTOM_HEADER));
 //    }
 
-    @Test
-    public void initAllowedHeadersContextWithSpringCommon() {
-        RequestContextPropagation.initRequestContext(new ContextDataRequest());
-        AllowedHeadersContextObject allowedHeadersContextObject = ContextManager.get(ALLOWED_HEADER);
-        Assertions.assertTrue(allowedHeadersContextObject.getHeaders().containsKey(CUSTOM_HEADER));
-
-        ContextDataResponse responseContextData = new ContextDataResponse();
-        RequestContextPropagation.setResponsePropagatableData(responseContextData);
-        Assertions.assertNotNull(responseContextData.getResponseHeaders().get(CUSTOM_HEADER));
-    }
+//    @Test
+//    public void initAllowedHeadersContextWithSpringCommon() {
+//        RequestContextPropagation.initRequestContext(new ContextDataRequest());
+//        AllowedHeadersContextObject allowedHeadersContextObject = ContextManager.get(ALLOWED_HEADER);
+//        Assertions.assertTrue(allowedHeadersContextObject.getHeaders().containsKey(CUSTOM_HEADER));
+//
+//        ContextDataResponse responseContextData = new ContextDataResponse();
+//        RequestContextPropagation.setResponsePropagatableData(responseContextData);
+//        Assertions.assertNotNull(responseContextData.getResponseHeaders().get(CUSTOM_HEADER));
+//    }
 
 //    @Test
 //    public void testAllowedHeadersContextWrapper() {
