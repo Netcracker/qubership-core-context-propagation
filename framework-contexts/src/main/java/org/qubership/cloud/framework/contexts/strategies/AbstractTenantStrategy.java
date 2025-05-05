@@ -1,6 +1,5 @@
 package org.qubership.cloud.framework.contexts.strategies;
 
-import org.qubership.cloud.context.propagation.core.Strategy;
 import org.qubership.cloud.context.propagation.core.contextdata.IncomingContextData;
 import org.qubership.cloud.context.propagation.core.supports.strategies.AbstractStrategy;
 import org.jetbrains.annotations.Nullable;
@@ -11,11 +10,9 @@ import org.slf4j.MDC;
 import java.util.function.Supplier;
 
 public abstract class AbstractTenantStrategy extends AbstractStrategy<TenantContextObject> {
-
     private static final IncomingContextData nullContextData = null;
     public static final TenantContextObject DEFAULT_VALUE = new TenantContextObject(nullContextData);
     public static final String TENANT_ID = "tenantId";
-
 
     @Override
     protected Supplier<TenantContextObject> defaultObjectSupplier() {

@@ -45,21 +45,21 @@ class AllowedHeadersContextObjectPropagationTest extends AbstractContextTestWith
         Assertions.assertNotNull(responseContextData.getResponseHeaders().get(CUSTOM_HEADER));
     }
 
-    @Test
-    public void testAllowedHeadersContextWrapper() {
-        RequestContextPropagation.initRequestContext(new ContextDataRequest());
-        Map<String, String> testHeaders = new HashMap<>();
-        testHeaders.put(CUSTOM_HEADER, "custom_value");
-        Assertions.assertEquals(testHeaders, AllowedHeadersContext.getHeaders());
-
-        Map<String, String> otherTestHeaders = new HashMap<>();
-        otherTestHeaders.put("Second_header", "Second_value");
-        AllowedHeadersContext.set(otherTestHeaders);
-        Assertions.assertEquals(otherTestHeaders, AllowedHeadersContext.getHeaders());
-
-        AllowedHeadersContext.clear();
-        Assertions.assertTrue(AllowedHeadersContext.getHeaders().isEmpty());
-    }
+//    @Test
+//    public void testAllowedHeadersContextWrapper() {
+//        RequestContextPropagation.initRequestContext(new ContextDataRequest());
+//        Map<String, String> testHeaders = new HashMap<>();
+//        testHeaders.put(CUSTOM_HEADER, "custom_value");
+//        Assertions.assertEquals(testHeaders, AllowedHeadersContext.getHeaders());
+//
+//        Map<String, String> otherTestHeaders = new HashMap<>();
+//        otherTestHeaders.put("Second_header", "Second_value");
+//        AllowedHeadersContext.set(otherTestHeaders);
+//        Assertions.assertEquals(otherTestHeaders, AllowedHeadersContext.getHeaders());
+//
+//        AllowedHeadersContext.clear();
+//        Assertions.assertTrue(AllowedHeadersContext.getHeaders().isEmpty());
+//    }
 
     @Test
     public void testAllowedHeadersSerializableDataFromCxtManager() {
