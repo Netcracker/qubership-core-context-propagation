@@ -10,7 +10,7 @@
 
     <artifactId>context-propagation-spring-kafka</artifactId>
     <properties>
-        <spring.kafka.version>3.3.7</spring.kafka.version>
+        <spring.kafka.version>3.3.8</spring.kafka.version>
     </properties>
     <dependencies>
         <dependency>
