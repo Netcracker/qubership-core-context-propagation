@@ -1,6 +1,7 @@
 package com.netcracker.cloud.headerstracking.filters.context;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import com.netcracker.cloud.context.propagation.core.RequestContextPropagation;
 import com.netcracker.cloud.framework.contexts.data.ContextDataRequest;
@@ -15,5 +16,11 @@ public abstract class AbstractContextTest {
         System.setProperty("headers.allowed", CUSTOM_HEADER);
         RequestContextPropagation.initRequestContext(new ContextDataRequest());
         System.out.println("TEST BeforeEach finished");
+    }
+
+    @AfterEach
+    void teardown() {
+        System.clearProperty("headers.allowed");
+        RequestContextPropagation.initRequestContext(new ContextDataRequest());
     }
 }
