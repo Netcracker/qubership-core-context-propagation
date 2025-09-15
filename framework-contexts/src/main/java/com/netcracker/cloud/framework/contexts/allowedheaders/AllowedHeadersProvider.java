@@ -39,6 +39,7 @@ public class AllowedHeadersProvider extends AbstractContextProviderOnInheritable
 
     @Override
     public AllowedHeadersContextObject provide(@Nullable IncomingContextData contextData) {
+        System.out.println("TEST AllowedHeadersProvider provide. headers = " + headers);
         if (this.headers == null) setUpHeadersFromProperties();
         return new AllowedHeadersContextObject(contextData, this.headers);
     }
