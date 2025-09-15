@@ -27,6 +27,7 @@ public class RequestContextPropagation implements AutoCloseable {
         ContextManager.getContextProviders().stream()
                 .filter(filter)
                 .forEach(contextProvider -> {
+                    System.out.println("TEST initRequestContext for " + contextProvider.getClass().getSimpleName());
                     Object contextValue = contextProvider.provide(incomingContextData);
                     if (contextValue != null) {
                         Strategy strategy = contextProvider.strategy();
