@@ -10,6 +10,7 @@ import com.netcracker.cloud.context.propagation.core.RequestContextPropagation;
 import com.netcracker.cloud.framework.contexts.data.ContextDataRequest;
 import com.netcracker.cloud.framework.contexts.data.ContextDataResponse;
 import com.netcracker.cloud.framework.contexts.helper.AbstractContextTestWithProperties;
+import com.netcracker.cloud.framework.contexts.helper.ContextPropagationTestUtils;
 import uk.org.webcompere.systemstubs.environment.EnvironmentVariables;
 import uk.org.webcompere.systemstubs.jupiter.SystemStub;
 import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
@@ -30,6 +31,7 @@ class AllowedHeadersPropertyTest extends AbstractContextTestWithProperties {
     static void setup() {
         headersPropertyBackup = System.getProperty(HEADERS_PROPERTY);
         System.clearProperty(HEADERS_PROPERTY);
+        ContextPropagationTestUtils.reinitializeRegistry();
     }
 
     @AfterAll
