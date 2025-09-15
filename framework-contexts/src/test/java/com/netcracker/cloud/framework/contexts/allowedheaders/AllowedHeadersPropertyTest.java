@@ -4,20 +4,13 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import com.netcracker.cloud.context.propagation.core.ContextManager;
 import com.netcracker.cloud.context.propagation.core.RequestContextPropagation;
 import com.netcracker.cloud.framework.contexts.data.ContextDataRequest;
 import com.netcracker.cloud.framework.contexts.data.ContextDataResponse;
 import com.netcracker.cloud.framework.contexts.helper.AbstractContextTestWithProperties;
-import com.netcracker.cloud.framework.contexts.helper.ContextPropagationTestUtils;
-import uk.org.webcompere.systemstubs.environment.EnvironmentVariables;
-import uk.org.webcompere.systemstubs.jupiter.SystemStub;
-import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
 
 import java.util.Map;
-
-import static com.netcracker.cloud.framework.contexts.data.ContextDataRequest.CUSTOM_HEADER;
 
 class AllowedHeadersPropertyTest extends AbstractContextTestWithProperties {
     private static final String CUSTOM_HEADER = "Custom-header-1";
