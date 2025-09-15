@@ -3,11 +3,13 @@ package com.netcracker.cloud.framework.contexts.allowedheaders;
 import com.netcracker.cloud.context.propagation.core.RegisterProvider;
 import com.netcracker.cloud.context.propagation.core.contextdata.IncomingContextData;
 import com.netcracker.cloud.context.propagation.core.supports.providers.AbstractContextProviderOnInheritableThreadLocal;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 @RegisterProvider
 public class AllowedHeadersProvider extends AbstractContextProviderOnInheritableThreadLocal<AllowedHeadersContextObject> {
     public static final String ALLOWED_HEADER = "allowed_header";
@@ -19,6 +21,8 @@ public class AllowedHeadersProvider extends AbstractContextProviderOnInheritable
     private synchronized void setUpHeadersFromProperties() {
         if (headers == null) { // double-check after monitor is obtained
             String allowedHeaders = "";
+            System.out.println("TEST setUpHeadersFromProperties. HEADERS_PROPERTY = " + System.getProperty(HEADERS_PROPERTY));
+            System.out.println("TEST setUpHeadersFromProperties. HEADERS_ENV = " + System.getProperty(HEADERS_ENV));
             if (System.getProperty(HEADERS_PROPERTY) != null) {
                 allowedHeaders = System.getProperty(HEADERS_PROPERTY);
             } else if (System.getenv(HEADERS_ENV) != null) {
